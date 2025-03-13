@@ -28,6 +28,6 @@ app.listen(PORT,()=>{
     console.log(`App is running at port ${PORT}`)
 })
 
-app.use('/home',(req,res)=>{
-    res.send(`<h1>Welcome to Supper`)
+app.use('/',(req,res)=>{
+    res.send(`<h1>Welcome to Supper</h1>`)
 })
