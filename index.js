@@ -6,6 +6,7 @@ const vendorRoutes=require('./routes/vendorRoutes');
 const bodyParser=require('body-parser');
 const firmRoutes=require('./routes/firmRoutes');
 const productRoutes=require('./routes/productRoutes');
+const cors=require('cors');
 const PORT=process.env.PORT||4000;
 
 mongoose.connect(process.env.MONGODB_URL,{
@@ -18,6 +19,7 @@ mongoose.connect(process.env.MONGODB_URL,{
 .catch((error)=>{
     console.log("MongoDB Connection error:",error);
 })
+app.use(cors())
 app.use(bodyParser.json());
 app.use('/vendor',vendorRoutes);
 app.use('/firm',firmRoutes);

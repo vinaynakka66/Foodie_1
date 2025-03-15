@@ -26,7 +26,7 @@ exports.addFirm=async(req,res)=>{
             })
         }
         const firm=new Firm({
-            firmName,area,category,region,offer,vendor:vendor._id
+            firmName,area,category,region,offer,vendor:vendor._id,image
         })
         const savedFirm=await firm.save();
         vendor.firm.push(savedFirm);
